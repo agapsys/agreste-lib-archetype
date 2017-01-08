@@ -1,86 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>${groupId}</groupId>
-	<artifactId>${artifactId}</artifactId>
-	<version>${version}</version>
-	<packaging>jar</packaging>
+    <groupId>${groupId}</groupId>
+    <artifactId>${artifactId}</artifactId>
+    <version>${version}</version>
+    <packaging>jar</packaging>
 
-	<name>${artifactId}</name>
+    <name>${artifactId}</name>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
-	</properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
 
-	<dependencies>
-		<!-- provided dependencies -->
-		<dependency>
-			<groupId>javax</groupId>
-			<artifactId>javaee-web-api</artifactId>
-			<version>7.0</version>
-			<scope>provided</scope>
-		</dependency>
+    <dependencies>
+        <!-- provided dependencies -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
 
-		<!-- test dependencies -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.10</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.agapsys.libs</groupId>
-			<artifactId>agreste-test</artifactId>
-			<version>[6.0.0, 7.0.0)</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>1.4.190</version>
-			<scope>test</scope>
-		</dependency>
+        <!-- test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.agapsys.libs</groupId>
+            <artifactId>agreste-test</artifactId>
+            <version>[6.0.0, 7.0.0)</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.190</version>
+            <scope>test</scope>
+        </dependency>
 
-		<!-- compile dependencies -->
-		<dependency>
-			<groupId>com.agapsys.libs</groupId>
-			<artifactId>agreste</artifactId>
-			<version>[6.0.0, 7.0.0)</version>
-		</dependency>
-	</dependencies>
+        <!-- compile dependencies -->
+        <dependency>
+            <groupId>com.agapsys.libs</groupId>
+            <artifactId>agreste</artifactId>
+            <version>[6.0.0, 7.0.0)</version>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<!-- JPA resource filtering (test-only) -->
-		<testResources>
-			<testResource>
-				<directory>src/test/resources</directory>
-				<filtering>true</filtering>
-			</testResource>
-		</testResources>
+    <build>
+        <!-- JPA resource filtering (test-only) -->
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
 
-		<plugins>
-			<plugin>
-				<groupId>com.agapsys.plugins</groupId>
-				<artifactId>jpa-scanner-maven-plugin</artifactId>
-				<version>0.1.0</version>
-				<executions>
-					<execution>
-						<id>lib-build</id>
-						<goals>
-							<goal>create</goal> <!-- creates META-INF/jpa.info -->
-						</goals>
-					</execution>
-					<execution>
-						<id>lib-test</id>
-						<goals>
-							<goal>list</goal> <!-- inject JPA classes info filtered test resources -->
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+        <plugins>
+            <plugin>
+                <groupId>com.agapsys.plugins</groupId>
+                <artifactId>jpa-scanner-maven-plugin</artifactId>
+                <version>0.1.0</version>
+                <executions>
+                    <execution>
+                        <id>lib-build</id>
+                        <goals>
+                            <goal>create</goal> <!-- creates META-INF/jpa.info -->
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>lib-test</id>
+                        <goals>
+                            <goal>list</goal> <!-- inject JPA classes info filtered test resources -->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
