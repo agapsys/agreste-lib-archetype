@@ -6,7 +6,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>agreste-lib-seed</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.0-20170330</version>
     
     <packaging>jar</packaging>
 
@@ -15,6 +15,34 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
+    
+    <url>https://github.com/agapsys/agreste</url>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Agapsys Tecnologia Ltda-ME</name>
+            <email>contact@agapsys.com</email>
+            <organization>Agapsys Tecnologia Ltda-ME</organization>
+            <organizationUrl>http://www.agapsys.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:agapsys/agreste.git</connection>
+        <url>git@github.com:agapsys/agreste.git</url>
+    </scm>
+
+    <organization>
+        <name>Agapsys Tecnologia Ltda-ME</name>
+        <url>http://www.agapsys.com</url>
+    </organization>
 
     <dependencies>
         <!-- provided dependencies -->
@@ -71,7 +99,7 @@
             <plugin>
                 <groupId>com.agapsys</groupId>
                 <artifactId>jpa-scanner-maven-plugin</artifactId>
-                <version>0.1.0</version>
+                <version>0.1.0-20170330</version>
                 <executions>
                     <execution>
                         <id>lib-build</id>
