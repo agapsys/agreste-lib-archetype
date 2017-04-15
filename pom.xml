@@ -4,7 +4,7 @@
     
     <name>AGRESTE (Seed Library)</name>
 
-    <groupId>com.example</groupId>
+    <groupId>com.agapsys.example</groupId>
     <artifactId>agreste-lib-seed</artifactId>
     <version>0.1.0-20170415</version>
     
